@@ -86,6 +86,24 @@
   font-display: swap;
 }
 
+@font-face {
+  font-family: "Vonique";
+  src: url("./fonts/Vonique64.woff2") format("woff2"),
+    url("./fonts/Vonique64.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Henri";
+  src: url("./fonts/HenriDidot.woff2") format("woff2"),
+    url("./fonts/HenriDidot.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;

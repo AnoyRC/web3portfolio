@@ -52,12 +52,20 @@ export default function Home() {
           <Tiles h={20} w={14} t={8} l={8} color="#d9f99d" />
           <Tiles h={28} w={14} t={20} l={35} color="#f1d3a1" />
           <Tiles h={18} w={16} t={50} l={14} color="#e3dbd9" />
-          <Tiles h={35} w={15} t={45} l={54} color="#e6eff6" />
+          <Tiles
+            h={35}
+            w={15}
+            t={45}
+            l={54}
+            color="#e6eff6"
+            img="/ProfilePic.jpg"
+          />
           <Tiles h={28} w={12} t={8} l={85} color="#89b4c4" />
           <Tiles h={20} w={14} t={5} l={60} color="#548999" />
           <Tiles h={20} w={14} t={78} l={28} color="#faaf92" />
           <Tiles h={20} w={23} t={70} l={73} color="#a27d60" />
         </div>
+        <div className="fixed top-[2.5vh] left-[1.25vw] w-[97.5vw] bg-[#d9f99d] h-[95vh] flex justify-center rounded-3xl items-center"></div>
       </div>
     </>
   );
