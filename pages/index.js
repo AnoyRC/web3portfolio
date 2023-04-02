@@ -3,6 +3,7 @@ import Image from "next/image";
 import { Inter } from "next/font/google";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import Tiles from "@/components/tiles";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -37,15 +38,25 @@ export default function Home() {
   return (
     <>
       <div className="h-[100vh] w-[100vw] overflow-hidden">
-        <div className="h-[200vh] w-[200vw] bg-amber-50 relative" ref={gallery}>
-          <div className="absolute h-[20%] w-[14%] top-[8%] left-[8%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[28%] w-[14%] top-[20%] left-[35%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[18%] w-[16%] top-[50%] left-[14%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[35%] w-[15%] top-[45%] left-[54%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[28%] w-[12%] top-[8%] left-[85%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[20%] w-[14%] top-[5%] left-[60%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[20%] w-[14%] top-[78%] left-[28%] bg-lime-200 rounded-2xl"></div>
-          <div className="absolute h-[20%] w-[23%] top-[70%] left-[73%] bg-lime-200 rounded-2xl"></div>
+        <div className="fixed w-[100vw] bg-amber-50 h-[100vh] flex flex-col justify-center items-center">
+          <h1 className="font-[Hella] text-[#000000] text-6xl opacity-[71%]">
+            Hi 👋, I'm Anoy{" "}
+          </h1>
+          <h1 className="font-[Hella] text-[#000000] text-2xl mt-2 opacity-[71%] text-center">
+            A Engineering student by day, a passionate
+            <br />
+            full stack web3 developer by night
+          </h1>
+        </div>
+        <div className="h-[200vh] w-[200vw] relative" ref={gallery}>
+          <Tiles h={20} w={14} t={8} l={8} color="#d9f99d" />
+          <Tiles h={28} w={14} t={20} l={35} color="#f1d3a1" />
+          <Tiles h={18} w={16} t={50} l={14} color="#e3dbd9" />
+          <Tiles h={35} w={15} t={45} l={54} color="#e6eff6" />
+          <Tiles h={28} w={12} t={8} l={85} color="#89b4c4" />
+          <Tiles h={20} w={14} t={5} l={60} color="#548999" />
+          <Tiles h={20} w={14} t={78} l={28} color="#faaf92" />
+          <Tiles h={20} w={23} t={70} l={73} color="#a27d60" />
         </div>
       </div>
     </>
