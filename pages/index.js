@@ -4,11 +4,21 @@ import { Inter } from "next/font/google";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import Tiles from "@/components/tiles";
+import PopUp from "@/components/popUp";
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
   const gallery = useRef(null);
+  const popUp = useSelector((state) => state.popUp);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    console.log(popUp);
+    dispatch(setActiveTile(1));
+  }, [popUp]);
 
   useEffect(() => {
     let ctx = gsap.context(() => {
@@ -65,7 +75,7 @@ export default function Home() {
           <Tiles h={20} w={14} t={78} l={28} color="#faaf92" />
           <Tiles h={20} w={23} t={70} l={73} color="#a27d60" />
         </div>
-        <div className="fixed top-[2.5vh] left-[1.25vw] w-[97.5vw] bg-[#d9f99d] h-[95vh] flex justify-center rounded-3xl items-center"></div>
+        <PopUp />
       </div>
     </>
   );
