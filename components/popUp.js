@@ -1,10 +1,43 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 
 export default function PopUp(props) {
+  const popUp = useSelector((state) => state.popUp);
+  const dispatch = useDispatch();
+  const window = useRef(null);
+  const tl = gsap.timeline();
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      gsap.to(window.current, { opacity: 1, duration: 1 }, "+=1");
+    }, popUp);
+    return () => ctx.revert();
+  }, []);
+
+  useEffect(() => {
+    let ctx = gsap.context(() => {
+      if (popUp.isActive) {
+        tl.set(window.current, { scale: 0 });
+        tl.to(window.current, { scale: 1, duration: 1 }, "+=1");
+      } else {
+        tl.set(window.current, { scale: 1 });
+        tl.to(window.current, { scale: 0, duration: 1 });
+      }
+    }, popUp);
+    return () => ctx.revert();
+  }, [popUp.isActive]);
+
   return (
-    <div className="fixed top-[2.5vh] left-[1.25vw] w-[97.5vw] bg-[#d9f99d] h-[95vh] flex justify-center rounded-3xl items-center">
+    <div
+      className="fixed top-[2.5vh] left-[1.25vw] w-[97.5vw] bg-[#d9f99d] h-[95vh] flex justify-center rounded-3xl items-center scale-0 opacity-0"
+      ref={window}
+      onClick={() => {
+        dispatch(setIsActive(false));
+      }}
+    >
       <div className="flex h-[100%] w-[60%] rounded-l-3xl">
         <div className="rounded-2xl mt-20 ml-20 h-[30%] w-[35%] bg-[#c5c5c5] hover:scale-105 transition-transform"></div>
         <div className="rounded-2xl mt-20 ml-10 h-[82%] w-[35%] bg-[#c5c5c5] hover:scale-105 transition-transform"></div>

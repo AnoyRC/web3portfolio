@@ -16,11 +16,6 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(popUp);
-    dispatch(setActiveTile(1));
-  }, [popUp]);
-
-  useEffect(() => {
     let ctx = gsap.context(() => {
       window.onmousemove = (e) => {
         const mouseX = e.clientX;

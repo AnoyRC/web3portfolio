@@ -1,21 +1,33 @@
 import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
+import { useSelector, useDispatch } from "react-redux";
+import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 
 export default function Tiles(props) {
   const tile = useRef(null);
   const image = useRef(null);
+  const popUp = useSelector((state) => state.popUp);
+  const dispatch = useDispatch();
   const tl = gsap.timeline();
 
   useEffect(() => {
     let ctx = gsap.context(() => {
-      tl.to(tile.current, { scale: 1, duration: 2 });
-      tl.delay(1);
+      if (!popUp.isActive) {
+        tl.set(tile.current, { scale: 0 });
+        tl.to(tile.current, { scale: 1, duration: 1 }, "+=1");
+      } else {
+        tl.set(tile.current, { scale: 1 });
+        tl.to(tile.current, { scale: 0, duration: 1 });
+      }
 
       tl.timeScale(1).then(() => {
+        const SizeX = tile.current.offsetWidth * 1.05;
+        const SizeY = tile.current.offsetHeight * 1.05;
         let animation = gsap.to(tile.current, {
           paused: true,
-          scale: 1.05,
+          width: SizeX,
+          height: SizeY,
         });
         let animation2 = gsap.to(image.current, {
           paused: true,
@@ -32,7 +44,7 @@ export default function Tiles(props) {
       });
     }, tile);
     return () => ctx.revert();
-  }, []);
+  }, [popUp.isActive]);
 
   return (
     <div
@@ -43,8 +55,12 @@ export default function Tiles(props) {
         width: `${props.w}%`,
         top: `${props.t}%`,
         left: `${props.l}%`,
+        scale: 0,
       }}
       ref={tile}
+      onClick={() => {
+        dispatch(setIsActive(true));
+      }}
     >
       <Image
         src={props.img}
