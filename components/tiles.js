@@ -20,35 +20,13 @@ export default function Tiles(props) {
         tl.set(tile.current, { scale: 1 });
         tl.to(tile.current, { scale: 0, duration: 1 });
       }
-
-      tl.timeScale(1).then(() => {
-        const SizeX = tile.current.offsetWidth * 1.05;
-        const SizeY = tile.current.offsetHeight * 1.05;
-        let animation = gsap.to(tile.current, {
-          paused: true,
-          width: SizeX,
-          height: SizeY,
-        });
-        let animation2 = gsap.to(image.current, {
-          paused: true,
-          opacity: 1,
-        });
-        tile.current.addEventListener("mouseenter", () => {
-          animation.play();
-          animation2.play();
-        });
-        tile.current.addEventListener("mouseleave", () => {
-          animation.reverse();
-          animation2.reverse();
-        });
-      });
     }, tile);
     return () => ctx.revert();
   }, [popUp.isActive]);
 
   return (
     <div
-      className={`scale-0 absolute rounded-2xl`}
+      className={`group scale-0 absolute rounded-2xl`}
       style={{
         backgroundColor: props.color,
         height: `${props.h}%`,
@@ -59,6 +37,7 @@ export default function Tiles(props) {
       }}
       ref={tile}
       onClick={() => {
+        dispatch(setActiveTile(props.id));
         dispatch(setIsActive(true));
       }}
     >
@@ -67,7 +46,7 @@ export default function Tiles(props) {
         height={800}
         width={800}
         alt="ProfilePic"
-        className="object-cover h-[100%] w-[100%] rounded-2xl opacity-0 scale-100"
+        className="object-cover h-[100%] w-[100%] rounded-2xl opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 ease-in-out"
         ref={image}
       ></Image>
     </div>
