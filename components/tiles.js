@@ -15,7 +15,7 @@ export default function Tiles(props) {
     let ctx = gsap.context(() => {
       if (!popUp.isActive) {
         tl.set(tile.current, { scale: 0 });
-        tl.to(tile.current, { scale: 1, duration: 1 }, "+=1");
+        tl.to(tile.current, { scale: 1, duration: 1 }, "+=2");
       } else {
         tl.set(tile.current, { scale: 1 });
         tl.to(tile.current, { scale: 0, duration: 1 });
