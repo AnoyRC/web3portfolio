@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   activeTile: 0,
   isActive: false,
+  activeColor: "#d9f99d",
 };
 
 export const popUpSlice = createSlice({
@@ -15,9 +16,13 @@ export const popUpSlice = createSlice({
     setIsActive: (state, action) => {
       state.isActive = action.payload;
     },
+    setActiveColor: (state, action) => {
+      state.activeColor = action.payload;
+    },
   },
 });
 
-export const { setActiveTile, setIsActive } = popUpSlice.actions;
+export const { setActiveTile, setIsActive, setActiveColor } =
+  popUpSlice.actions;
 
 export default popUpSlice.reducer;

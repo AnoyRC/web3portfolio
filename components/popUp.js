@@ -38,9 +38,8 @@ export default function PopUp(props) {
   return (
     <>
       <div
-        className="fixed top-[2.5vh] left-[1.25vw] w-[97.5vw] h-[95vh] flex justify-center rounded-3xl items-center scale-0 opacity-0"
+        className="fixed top-[7.5vh] left-[6.25vw] w-[87.5vw] h-[85vh] border-[2px] border-[#7a7a7a] flex justify-center rounded-[100px] items-center scale-0 backdrop-filter bg-white-900/20 backdrop-blur-[100px] opacity-0"
         style={{
-          backgroundColor: props.color,
           opacity: popUp.activeTile === props.id ? 1 : 0,
           zIndex: popUp.activeTile === props.id ? 100 : -1,
         }}
@@ -49,24 +48,17 @@ export default function PopUp(props) {
           dispatch(setIsActive(false));
         }}
       >
-        <div className="flex h-[100%] w-[60%] rounded-l-3xl">
-          <div className="rounded-2xl mt-20 ml-20 h-[30%] w-[35%] bg-[#c5c5c5] hover:scale-105 transition-transform"></div>
-          <div className="rounded-2xl mt-20 ml-10 h-[82%] w-[35%] bg-[#c5c5c5] hover:scale-105 transition-transform"></div>
-          <div className="rounded-2xl mt-20 ml-10 h-[82%] w-[35%] bg-transparent flex flex-col justify-end">
-            <div className="rounded-2xl h-[60%] w-[100%] bg-[#c5c5c5] hover:scale-105 transition-transform"></div>
-          </div>
-        </div>
-        <div className="flex flex-col h-[100%] w-[40%] rounded-r-3xl">
-          <h1 className="font-[Hella] text-[#000000] w-[90%] mt-[51%] opacity-70 text-[4vw] text-right">
-            Hi, I'm Anoy
+        {/* <div className="flex flex-col h-[100%] w-[40%] rounded-r-3xl">
+          <h1 className="font-[Narcost] text-[#000000] w-[90%] mt-[45%] opacity-70 text-[4vw] text-right">
+            Hi 👋, I'm Anoy
           </h1>
-          <h1 className="font-[Hella] text-[#000000] w-[90%] opacity-70 text-[1.5vw] pl-12 mt-2 text-right">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
+          <h1 className="font-[Hella] text-[#000000] w-[90%] opacity-70 text-[1.5vw] pl-20 mt-2 text-right">
+            A passionate full stack developer and web3 enthusiast from India.
+            Specializing in building exceptional websites, dApps, and everything
+            in between. I'm currently working on a few personal projects and
+            learning new technologies.
           </h1>
-        </div>
+        </div> */}
       </div>
     </>
   );

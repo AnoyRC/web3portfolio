@@ -2,7 +2,7 @@ import Image from "next/image";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { useSelector, useDispatch } from "react-redux";
-import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
+import { setActiveTile, setIsActive, setActiveColor } from "@/redux/popUpSlice";
 
 export default function Tiles(props) {
   const tile = useRef(null);
@@ -38,6 +38,7 @@ export default function Tiles(props) {
       ref={tile}
       onClick={() => {
         dispatch(setActiveTile(props.id));
+        dispatch(setActiveColor(props.color));
         dispatch(setIsActive(true));
       }}
     >

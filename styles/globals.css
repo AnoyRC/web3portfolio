@@ -87,18 +87,27 @@
 }
 
 @font-face {
-  font-family: "Vonique";
-  src: url("./fonts/Vonique64.woff2") format("woff2"),
-    url("./fonts/Vonique64.woff") format("woff");
+  font-family: "Amazed";
+  src: url("./fonts/AmazedBreath.woff2") format("woff2"),
+    url("./fonts/AmazedBreath.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Henri";
-  src: url("./fonts/HenriDidot.woff2") format("woff2"),
-    url("./fonts/HenriDidot.woff") format("woff");
+  font-family: "Allison";
+  src: url("./fonts/AllisonTessa-ExtraexpandedExtra.woff2") format("woff2"),
+    url("./fonts/AllisonTessa-ExtraexpandedExtra.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Narcost";
+  src: url("./fonts/Narcost-Regular.woff2") format("woff2"),
+    url("./fonts/Narcost-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
