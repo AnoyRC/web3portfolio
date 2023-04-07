@@ -7,6 +7,7 @@ import Tiles from "@/components/tiles";
 import PopUp from "@/components/popUp";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
+import { content } from "../data/content";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -101,31 +102,34 @@ export default function Home() {
           ></div>
         </div>
         <div className="h-[200vh] w-[200vw] relative z-20" ref={gallery}>
-          <Tiles h={20} w={14} t={8} l={8} color="#d9f99d" id={1} />
-          <Tiles h={28} w={14} t={20} l={35} color="#f1d3a1" id={2} />
-          <Tiles h={18} w={16} t={50} l={14} color="#e3dbd9" id={3} />
-          <Tiles
-            h={35}
-            w={15}
-            t={45}
-            l={54}
-            color="#e6eff6"
-            img="/ProfilePic.jpg"
-            id={4}
-          />
-          <Tiles h={28} w={12} t={8} l={85} color="#89b4c4" id={5} />
-          <Tiles h={20} w={14} t={5} l={60} color="#548999" id={6} />
-          <Tiles h={20} w={14} t={78} l={28} color="#faaf92" id={7} />
-          <Tiles h={20} w={23} t={70} l={73} color="#a27d60" id={8} />
+          {content.map((item) => {
+            return (
+              <Tiles
+                key={item.id}
+                h={item.h}
+                w={item.w}
+                t={item.t}
+                l={item.l}
+                color={item.color}
+                img={item.img}
+                id={item.id}
+              />
+            );
+          })}
         </div>
-        <PopUp color="#d9f99d" id={1} />
-        <PopUp color="#f1d3a1" id={2} />
-        <PopUp color="#e3dbd9" id={3} />
-        <PopUp color="#e6eff6" id={4} />
-        <PopUp color="#89b4c4" id={5} />
-        <PopUp color="#548999" id={6} />
-        <PopUp color="#faaf92" id={7} />
-        <PopUp color="#a27d60" id={8} />
+        {content.map((item) => {
+          return (
+            <PopUp
+              color={item.color}
+              id={item.id}
+              key={item.id}
+              img={item.img}
+              img2={item.img2}
+              title={item.title}
+              body={item.body}
+            />
+          );
+        })}
       </div>
     </>
   );

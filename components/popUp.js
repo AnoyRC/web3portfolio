@@ -48,17 +48,40 @@ export default function PopUp(props) {
           dispatch(setIsActive(false));
         }}
       >
-        {/* <div className="flex flex-col h-[100%] w-[40%] rounded-r-3xl">
-          <h1 className="font-[Narcost] text-[#000000] w-[90%] mt-[45%] opacity-70 text-[4vw] text-right">
-            Hi 👋, I'm Anoy
-          </h1>
-          <h1 className="font-[Hella] text-[#000000] w-[90%] opacity-70 text-[1.5vw] pl-20 mt-2 text-right">
-            A passionate full stack developer and web3 enthusiast from India.
-            Specializing in building exceptional websites, dApps, and everything
-            in between. I'm currently working on a few personal projects and
-            learning new technologies.
-          </h1>
-        </div> */}
+        <div className="h-[100%] w-[100%] flex justify-center items-center">
+          <div className="flex flex-col h-[100%] w-[25%] items-center justify-center">
+            <div className="h-[40%] w-[70%] rounded-2xl border-[2px] border-[#7a7a7a] relative group">
+              <Image
+                src={props.img}
+                height={800}
+                width={800}
+                alt="Image1"
+                className="h-[100%] w-[100%] rounded-2xl object-cover "
+              />
+              <div className="backdrop-filter bg-white-900/10 backdrop-blur-[10px] top-0 left-0 absolute group-hover:opacity-0 transition-opacity duration-500 h-[100%] w-[100%] rounded-2xl"></div>
+            </div>
+          </div>
+          <div className="flex flex-col h-[100%] w-[45%] rounded-r-3xl items-center justify-center">
+            <h1 className="font-[Narcost] text-[#ffffff] w-[90%] opacity-70 text-[4vw] text-center">
+              {props.title}
+            </h1>
+            <h1 className="font-[Hella] text-[#ffffff] w-[90%] opacity-70 text-[1.5vw] mt-2 text-center">
+              {props.body}
+            </h1>
+          </div>
+          <div className="flex flex-col h-[100%] w-[25%] items-center justify-center">
+            <div className="h-[40%] w-[70%] rounded-2xl border-[2px] border-[#7a7a7a] relative group">
+              <Image
+                src={props.img2}
+                height={800}
+                width={800}
+                alt="Image1"
+                className="h-[100%] w-[100%] rounded-2xl object-cover "
+              />
+              <div className="backdrop-filter bg-white-900/10 backdrop-blur-[10px] top-0 left-0 absolute group-hover:opacity-0 transition-opacity duration-500 h-[100%] w-[100%] rounded-2xl"></div>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   );
