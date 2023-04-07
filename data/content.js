@@ -21,7 +21,7 @@ export const content = [
     img: "/Jobs.png",
     img2: "/Jobs2.webp",
     title: "Web3 as a career",
-    body: "I want to work in the field of Web3 and Blockchain and contribute to the development of the ecosystem. I want to work in a company where I can learn and grow as a developer.",
+    body: "I want to work in the field of Web3 and Blockchain and contribute to the development of the ecosystem. A company where I can learn and grow as a developer.",
   },
   {
     id: 3,
