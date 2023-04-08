@@ -68,12 +68,14 @@ export default function ProjectPopUp(props) {
             <h1 className="font-[Hella] text-[#000000] w-[90%] opacity-70 text-[1.5vw] mt-2 text-left">
               {props.body}
             </h1>
-            <a
-              href={props.link}
-              className="font-[Hella] text-[#ae4cff] w-[90%] opacity-70 text-[1.5vw] mt-2 text-left"
-            >
-              Go to the repository
-            </a>
+            {props.link.length > 0 && (
+              <a
+                href={props.link}
+                className="font-[Hella] text-[#ae4cff] w-[90%] opacity-70 text-[1.5vw] mt-2 text-left"
+              >
+                Go to the repository
+              </a>
+            )}
           </div>
         </div>
       </div>

@@ -7,7 +7,7 @@ import Tiles from "@/components/projectTiles";
 import ProjectPopUp from "@/components/projectPopup";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
-import { content } from "../../data/project";
+import { content } from "../../data/skill";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -85,7 +85,7 @@ export default function Home() {
           className="fixed w-[100vw] bg-[#000000] h-[100vh] flex flex-col justify-center items-center"
           ref={Bg}
         >
-          <h1 className="font-[Henri] text-[#fffdeb] text-9xl">PROJECTS</h1>
+          <h1 className="font-[Henri] text-[#fffdeb] text-9xl">SKILLS</h1>
           <div
             className="absolute top-5 left-10 rounded-full h-[20vw] w-[20vw] scale-0 opacity-0 circle"
             style={{ backgroundColor: popUp.activeColor }}
