@@ -41,7 +41,7 @@ export default function Menu(props) {
         onClick={() => setIsMenuActive(!isMenuActive)}
         ref={button}
       >
-        <h1 className="text-[#000000] font-[Henri] text-2xl">Menu</h1>
+        <h1 className="text-[#000000] font-[Henri] text-[1.35vw]">Menu</h1>
       </div>
       <div
         className="absolute border-[#7a7a7a] flex justify-center items-center backdrop-filter bg-stone-300/20 backdrop-blur-[30px] h-[9%] w-[40%] -bottom-[9%] left-[30%] z-30 rounded-t-3xl"
@@ -54,7 +54,7 @@ export default function Menu(props) {
             window.location.href = "/";
           }}
         >
-          <h1 className="text-[#000000] font-[Henri] text-5xl">Home</h1>
+          <h1 className="text-[#000000] font-[Henri] text-[2.5vw]">Home</h1>
         </div>
         <div
           className="w-1/3 bg-transparent hover:bg-stone-300/20 h-[100%] flex justify-center items-center transition-all duration-300 hover:cursor-pointer"
@@ -63,7 +63,7 @@ export default function Menu(props) {
             window.location.href = "/projects";
           }}
         >
-          <h1 className="text-[#000000] font-[Henri] text-5xl">Projects</h1>
+          <h1 className="text-[#000000] font-[Henri] text-[2.5vw]">Projects</h1>
         </div>
         <div
           className="w-1/3 bg-transparent hover:bg-stone-300/20 h-[100%] flex justify-center items-center transition-all duration-300 rounded-tr-3xl hover:cursor-pointer"
@@ -72,7 +72,7 @@ export default function Menu(props) {
             window.location.href = "/skills";
           }}
         >
-          <h1 className="text-[#000000] font-[Henri] text-5xl">Skills</h1>
+          <h1 className="text-[#000000] font-[Henri] text-[2.5vw]">Skills</h1>
         </div>
       </div>
     </>
