@@ -8,6 +8,9 @@ import PopUp from "@/components/popUp";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 import { content } from "../data/content";
+import Artwork from "@/components/artwork";
+import { artworkHome } from "@/data/artworks";
+import Menu from "@/components/menu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -50,42 +53,39 @@ export default function Home() {
 
   useEffect(() => {
     if (didMountRef.current) {
-      let ctx = gsap.context(() => {
-        const tl = gsap.timeline();
-        if (!popUp.isActive) {
-          tl.set(Bg.current, { backgroundColor: "#000000" });
-          tl.set(".circle", { scale: 1, opacity: 1 });
-          tl.to(Bg.current, {
-            backgroundColor: "#fffdeb",
+      const tl = gsap.timeline();
+      if (!popUp.isActive) {
+        tl.set(Bg.current, { backgroundColor: "#000000" });
+        tl.set(".circle", { scale: 1, opacity: 1 });
+        tl.to(Bg.current, {
+          backgroundColor: "#fffdeb",
+          duration: 1,
+        });
+        tl.to(".circle", { scale: 0, opacity: 0, duration: 1 });
+      } else {
+        tl.set(Bg.current, { backgroundColor: "#fffbeb" });
+        tl.to(
+          Bg.current,
+          {
+            backgroundColor: "#000000",
             duration: 1,
-          });
-          tl.to(".circle", { scale: 0, opacity: 0, duration: 1 });
-        } else {
-          tl.set(Bg.current, { backgroundColor: "#fffbeb" });
-          tl.to(
-            Bg.current,
-            {
-              backgroundColor: "#000000",
-              duration: 1,
-            },
-            "+=1"
-          );
-          tl.to(".circle", { scale: 1, opacity: 1, duration: 1 });
-        }
-      }, Bg);
-      return () => ctx.revert();
+          },
+          "+=1"
+        );
+        tl.to(".circle", { scale: 1, opacity: 1, duration: 1 });
+      }
     }
     didMountRef.current = true;
   }, [popUp.isActive]);
 
   return (
     <>
-      <div className="h-[100vh] w-[100vw] overflow-hidden">
+      <div className="h-[100vh] w-[100vw] relative overflow-hidden">
         <div
           className="fixed w-[100vw] bg-[#fffdeb] h-[100vh] flex flex-col justify-center items-center"
           ref={Bg}
         >
-          <h1 className="font-[Allison] text-[#000000] text-9xl opacity-[71%]">
+          <h1 className="font-[Allison] text-7xl opacity-[71%] text-center text-[#000000]">
             Anoy Roy Chowdhury
           </h1>
           <div
@@ -102,6 +102,19 @@ export default function Home() {
           ></div>
         </div>
         <div className="h-[200vh] w-[200vw] relative z-20" ref={gallery}>
+          {artworkHome.map((item) => {
+            return (
+              <Artwork
+                key={item.id}
+                w={item.w}
+                t={item.t}
+                l={item.l}
+                img={item.img}
+                id={item.id}
+              />
+            );
+          })}
+
           {content.map((item) => {
             return (
               <Tiles
@@ -130,6 +143,7 @@ export default function Home() {
             />
           );
         })}
+        <Menu />
       </div>
     </>
   );

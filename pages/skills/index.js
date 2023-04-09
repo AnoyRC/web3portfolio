@@ -8,6 +8,7 @@ import ProjectPopUp from "@/components/projectPopup";
 import { useSelector, useDispatch } from "react-redux";
 import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 import { content } from "../../data/skill";
+import Menu from "@/components/projectMenu";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -80,7 +81,7 @@ export default function Home() {
 
   return (
     <>
-      <div className="h-[100vh] w-[100vw] overflow-hidden">
+      <div className="h-[100vh] w-[100vw] relative overflow-hidden">
         <div
           className="fixed w-[100vw] bg-[#000000] h-[100vh] flex flex-col justify-center items-center"
           ref={Bg}
@@ -129,6 +130,7 @@ export default function Home() {
             />
           );
         })}
+        <Menu />
       </div>
     </>
   );

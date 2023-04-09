@@ -27,7 +27,7 @@ export const content = [
     id: 3,
     h: 18,
     w: 16,
-    t: 50,
+    t: 52,
     l: 14,
     color: "#e3dbd9",
     img: "/College.jpg",

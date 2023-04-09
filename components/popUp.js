@@ -20,19 +20,16 @@ export default function PopUp(props) {
   }, []);
 
   useEffect(() => {
-    let ctx = gsap.context(() => {
-      if (popUp.activeTile === props.id) {
-        if (popUp.isActive) {
-          tl.set(window.current, { scale: 0 });
-          tl.to(window.current, { scale: 1, duration: 1 }, "+=1");
-        }
-        if (!popUp.isActive) {
-          tl.set(window.current, { scale: 1 });
-          tl.to(window.current, { scale: 0, duration: 1 });
-        }
+    if (popUp.activeTile === props.id) {
+      if (popUp.isActive) {
+        tl.set(window.current, { scale: 0 });
+        tl.to(window.current, { scale: 1, duration: 1 }, "+=1");
       }
-    }, popUp);
-    return () => ctx.revert();
+      if (!popUp.isActive) {
+        tl.set(window.current, { scale: 1 });
+        tl.to(window.current, { scale: 0, duration: 1 });
+      }
+    }
   }, [popUp.isActive, popUp.activeTile]);
 
   return (
