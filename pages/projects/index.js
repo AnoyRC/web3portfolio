@@ -83,6 +83,10 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>My Projects</title>
+        <meta charSet="utf-8" />
+      </Head>
       <div className="h-[100vh] w-[100vw] relative overflow-hidden">
         <div
           className="fixed w-[100vw] bg-[#000000] h-[100vh] flex flex-col justify-center items-center"
