@@ -7,7 +7,7 @@ export const content = [
     l: 8,
     color: "#ff0276",
     img: "/SolspaceM4.png",
-    img2: "/SolSpaceM3.png",
+    img2: "/SolspaceM3.png",
     title: "Solspace Web",
     body: "This project is made with a purpose of bringing in the solana's dev community in a singular decentralized social space. As Solana's Saga is in development, Solspace can be the go-to social app for the developers, where they can post their experience and works on chains.",
     link: "https://github.com/AnoyRC/spling-social",
