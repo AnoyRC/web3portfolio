@@ -2,8 +2,8 @@ export const artworkHome = [
   {
     id: 1,
     img: "/Artwork1.png",
-    t: 54,
-    l: 46,
+    t: 77,
+    l: 47,
     w: 15,
   },
   {
@@ -40,5 +40,102 @@ export const artworkHome = [
     t: 2,
     l: 46.5,
     w: 28,
+  },
+];
+
+export const artworkProject = [
+  {
+    id: 1,
+    img: "/ProjectArtwork1.png",
+    t: 75,
+    l: 14,
+    w: 25,
+  },
+  {
+    id: 2,
+    img: "/ProjectArtwork2.png",
+    t: 28,
+    l: 16,
+    w: 25,
+  },
+  {
+    id: 3,
+    img: "/ProjectArtwork3.png",
+    t: 7,
+    l: 22,
+    w: 25,
+  },
+  {
+    id: 4,
+    img: "/ProjectArtwork4.png",
+    t: 25,
+    l: 50,
+    w: 27,
+  },
+  {
+    id: 5,
+    img: "/ProjectArtwork5.png",
+    t: 76,
+    l: 43,
+    w: 23,
+  },
+  {
+    id: 6,
+    img: "/ProjectArtwork6.png",
+    t: 38,
+    l: 78,
+    w: 29,
+  },
+];
+
+export const artworkSkill = [
+  {
+    id: 1,
+    img: "/SkillArtwork1.png",
+    t: 77,
+    l: 47,
+    w: 15,
+  },
+  {
+    id: 2,
+    img: "/SkillArtwork2.png",
+    t: 22,
+    l: 60,
+    w: 23,
+  },
+  {
+    id: 3,
+    img: "/SkillArtwork3.png",
+    t: 30,
+    l: 15,
+    w: 23,
+  },
+  {
+    id: 4,
+    img: "/SkillArtwork4.png",
+    t: 8,
+    l: 23,
+    w: 23,
+  },
+  {
+    id: 5,
+    img: "/SkillArtwork5.png",
+    t: 80,
+    l: 16,
+    w: 23,
+  },
+  {
+    id: 6,
+    img: "/SkillArtwork6.png",
+    t: 34,
+    l: 85,
+    w: 23,
+  },
+  {
+    id: 7,
+    img: "/SkillArtwork7.png",
+    t: 47,
+    l: 74,
+    w: 23,
   },
 ];

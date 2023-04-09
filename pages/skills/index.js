@@ -9,6 +9,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { setActiveTile, setIsActive } from "@/redux/popUpSlice";
 import { content } from "../../data/skill";
 import Menu from "@/components/projectMenu";
+import { artworkSkill } from "@/data/artworks";
+import Artwork from "@/components/artwork";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -101,6 +103,18 @@ export default function Home() {
           ></div>
         </div>
         <div className="h-[200vh] w-[200vw] relative z-20" ref={gallery}>
+          {artworkSkill.map((item) => {
+            return (
+              <Artwork
+                key={item.id}
+                w={item.w}
+                t={item.t}
+                l={item.l}
+                img={item.img}
+                id={item.id}
+              />
+            );
+          })}
           {content.map((item) => {
             return (
               <Tiles

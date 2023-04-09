@@ -37,7 +37,7 @@ export default function Menu(props) {
   return (
     <>
       <div
-        className="absolute border-[#7a7a7a] flex justify-center items-center backdrop-filter bg-red-200/20 backdrop-blur-[100px] h-[5%] w-[10%] bottom-0 left-[45%] z-30 rounded-t-3xl hover:bg-red-200/20 transition-colors duration-300 hover:cursor-pointer"
+        className="absolute border-[#7a7a7a] flex justify-center items-center backdrop-filter bg-red-200/20 backdrop-blur-[100px] h-[5%] w-[10%] bottom-0 left-[45%] z-30 rounded-t-3xl hover:bg-red-400/20 transition-colors duration-300 hover:cursor-pointer"
         onClick={() => setIsMenuActive(!isMenuActive)}
         ref={button}
       >
